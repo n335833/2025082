@@ -1,0 +1,799 @@
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://tempuri.org/">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">e政府服務平台平台管理模組介接服務</wsdl:documentation>
+<wsdl:types>
+<s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+<s:element name="GetTicketNo">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetTicketNoResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="GetTicketNoResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+</s:schema>
+</wsdl:types>
+<wsdl:message name="GetTicketNoSoapIn">
+<wsdl:part name="parameters" element="tns:GetTicketNo"/>
+</wsdl:message>
+<wsdl:message name="GetTicketNoSoapOut">
+<wsdl:part name="parameters" element="tns:GetTicketNoResponse"/>
+</wsdl:message>
+<wsdl:portType name="OMMediatorSoap">
+<wsdl:operation name="GetTicketNo">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得單一電子案號</wsdl:documentation>
+<wsdl:input message="tns:GetTicketNoSoapIn"/>
+<wsdl:output message="tns:GetTicketNoSoapOut"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="OMMediatorSoap" type="tns:OMMediatorSoap">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="GetTicketNo">
+<soap:operation soapAction="http://tempuri.org/GetTicketNo" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name="OMMediatorSoap12" type="tns:OMMediatorSoap">
+<soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="GetTicketNo">
+<soap12:operation soapAction="http://tempuri.org/GetTicketNo" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="OMMediator">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">e政府服務平台平台管理模組介接服務</wsdl:documentation>
+<wsdl:port name="OMMediatorSoap" binding="tns:OMMediatorSoap">
+<soap:address location="https://www.cp.gov.tw/SEWebApplication/OMmediator.asmx"/>
+</wsdl:port>
+<wsdl:port name="OMMediatorSoap12" binding="tns:OMMediatorSoap12">
+<soap12:address location="https://www.cp.gov.tw/SEWebApplication/OMmediator.asmx"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>
+SI
+
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="TIRequestHandler">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="InputData" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Token2" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="TIRequestHandlerResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="TIRequestHandlerResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="RequestHandler">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="InputData" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Token2" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="TicketNo" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="RequestHandlerResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="RequestHandlerResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+</s:schema>
+</wsdl:types>
+<wsdl:message name="RequestHandler2SoapIn">
+<wsdl:part name="parameters" element="tns:RequestHandler2"/>
+</wsdl:message>
+<wsdl:message name="RequestHandler2SoapOut">
+<wsdl:part name="parameters" element="tns:RequestHandler2Response"/>
+</wsdl:message>
+<wsdl:message name="GetExeStatusSoapIn">
+<wsdl:part name="parameters" element="tns:GetExeStatus"/>
+</wsdl:message>
+<wsdl:message name="GetExeStatusSoapOut">
+<wsdl:part name="parameters" element="tns:GetExeStatusResponse"/>
+</wsdl:message>
+<wsdl:message name="TIRequestHandlerSoapIn">
+<wsdl:part name="parameters" element="tns:TIRequestHandler"/>
+</wsdl:message>
+<wsdl:message name="TIRequestHandlerSoapOut">
+<wsdl:part name="parameters" element="tns:TIRequestHandlerResponse"/>
+</wsdl:message>
+<wsdl:message name="RequestHandlerSoapIn">
+<wsdl:part name="parameters" element="tns:RequestHandler"/>
+</wsdl:message>
+<wsdl:message name="RequestHandlerSoapOut">
+<wsdl:part name="parameters" element="tns:RequestHandlerResponse"/>
+</wsdl:message>
+<wsdl:portType name="SIMediatorSoap">
+<wsdl:operation name="RequestHandler2">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">啟動服務流程(含電子案號)</wsdl:documentation>
+<wsdl:input message="tns:RequestHandler2SoapIn"/>
+<wsdl:output message="tns:RequestHandler2SoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetExeStatus">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得電子案號執行狀態</wsdl:documentation>
+<wsdl:input message="tns:GetExeStatusSoapIn"/>
+<wsdl:output message="tns:GetExeStatusSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="TIRequestHandler">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">啟動服務流程</wsdl:documentation>
+<wsdl:input message="tns:TIRequestHandlerSoapIn"/>
+<wsdl:output message="tns:TIRequestHandlerSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="RequestHandler">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">啟動服務流程(TicketNo參數無作用)</wsdl:documentation>
+<wsdl:input message="tns:RequestHandlerSoapIn"/>
+<wsdl:output message="tns:RequestHandlerSoapOut"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="SIMediatorSoap" type="tns:SIMediatorSoap">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="RequestHandler2">
+<soap:operation soapAction="http://tempuri.org/RequestHandler2" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetExeStatus">
+<soap:operation soapAction="http://tempuri.org/GetExeStatus" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="TIRequestHandler">
+<soap:operation soapAction="http://tempuri.org/TIRequestHandler" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="RequestHandler">
+<soap:operation soapAction="http://tempuri.org/RequestHandler" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name="SIMediatorSoap12" type="tns:SIMediatorSoap">
+<soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="RequestHandler2">
+<soap12:operation soapAction="http://tempuri.org/RequestHandler2" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetExeStatus">
+<soap12:operation soapAction="http://tempuri.org/GetExeStatus" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="TIRequestHandler">
+<soap12:operation soapAction="http://tempuri.org/TIRequestHandler" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="RequestHandler">
+<soap12:operation soapAction="http://tempuri.org/RequestHandler" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="SIMediator">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">e政府服務平台系統整合模組介接服務</wsdl:documentation>
+<wsdl:port name="SIMediatorSoap" binding="tns:SIMediatorSoap">
+<soap:address location="https://www.cp.gov.tw/SEWebApplication/SImediator.asmx"/>
+</wsdl:port>
+<wsdl:port name="SIMediatorSoap12" binding="tns:SIMediatorSoap12">
+<soap12:address location="https://www.cp.gov.tw/SEWebApplication/SImediator.asmx"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>
+
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://tempuri.org/">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">e政府服務平台認證授權模組介接服務</wsdl:documentation>
+<wsdl:types>
+<s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+<s:element name="AuthHandler">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Token1" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="AuthHandlerResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="AuthHandlerResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="TIAuthHandler">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Token1" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="TIAuthHandlerResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="TIAuthHandlerResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="X509Handler">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Nonce" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="X509Credential" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="DigestValue" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="X509HandlerResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="X509HandlerResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="LoginHandler">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="account" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="LoginHandlerResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="LoginHandlerResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="ValidateToken1">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Token1" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="ValidateToken1Response">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="ValidateToken1Result" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetAuthObjects">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Token1" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="GetMessageType" type="tns:MessageType"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:simpleType name="MessageType">
+<s:restriction base="s:string">
+<s:enumeration value="Both"/>
+<s:enumeration value="Role"/>
+<s:enumeration value="Object"/>
+</s:restriction>
+</s:simpleType>
+<s:element name="GetAuthObjectsResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="GetAuthObjectsResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetServiceAuthList">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetServiceAuthListResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="GetServiceAuthListResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="LogoutHandler">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Token1" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="LogoutHandlerResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="LogoutHandlerResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetCertInfo">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Token1" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetCertInfoResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="GetCertInfoResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="AuthHandler2">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Token1" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="AuthHandler2Response">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="AuthHandler2Result" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetAvailableServices">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Token1" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetAvailableServicesResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="GetAvailableServicesResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="QueryFunctionList">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Token1" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="QueryFunctionListResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="QueryFunctionListResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+</s:schema>
+</wsdl:types>
+<wsdl:message name="AuthHandlerSoapIn">
+<wsdl:part name="parameters" element="tns:AuthHandler"/>
+</wsdl:message>
+<wsdl:message name="AuthHandlerSoapOut">
+<wsdl:part name="parameters" element="tns:AuthHandlerResponse"/>
+</wsdl:message>
+<wsdl:message name="TIAuthHandlerSoapIn">
+<wsdl:part name="parameters" element="tns:TIAuthHandler"/>
+</wsdl:message>
+<wsdl:message name="TIAuthHandlerSoapOut">
+<wsdl:part name="parameters" element="tns:TIAuthHandlerResponse"/>
+</wsdl:message>
+<wsdl:message name="X509HandlerSoapIn">
+<wsdl:part name="parameters" element="tns:X509Handler"/>
+</wsdl:message>
+<wsdl:message name="X509HandlerSoapOut">
+<wsdl:part name="parameters" element="tns:X509HandlerResponse"/>
+</wsdl:message>
+<wsdl:message name="LoginHandlerSoapIn">
+<wsdl:part name="parameters" element="tns:LoginHandler"/>
+</wsdl:message>
+<wsdl:message name="LoginHandlerSoapOut">
+<wsdl:part name="parameters" element="tns:LoginHandlerResponse"/>
+</wsdl:message>
+<wsdl:message name="ValidateToken1SoapIn">
+<wsdl:part name="parameters" element="tns:ValidateToken1"/>
+</wsdl:message>
+<wsdl:message name="ValidateToken1SoapOut">
+<wsdl:part name="parameters" element="tns:ValidateToken1Response"/>
+</wsdl:message>
+<wsdl:message name="GetAuthObjectsSoapIn">
+<wsdl:part name="parameters" element="tns:GetAuthObjects"/>
+</wsdl:message>
+<wsdl:message name="GetAuthObjectsSoapOut">
+<wsdl:part name="parameters" element="tns:GetAuthObjectsResponse"/>
+</wsdl:message>
+<wsdl:message name="GetServiceAuthListSoapIn">
+<wsdl:part name="parameters" element="tns:GetServiceAuthList"/>
+</wsdl:message>
+<wsdl:message name="GetServiceAuthListSoapOut">
+<wsdl:part name="parameters" element="tns:GetServiceAuthListResponse"/>
+</wsdl:message>
+<wsdl:message name="LogoutHandlerSoapIn">
+<wsdl:part name="parameters" element="tns:LogoutHandler"/>
+</wsdl:message>
+<wsdl:message name="LogoutHandlerSoapOut">
+<wsdl:part name="parameters" element="tns:LogoutHandlerResponse"/>
+</wsdl:message>
+<wsdl:message name="GetCertInfoSoapIn">
+<wsdl:part name="parameters" element="tns:GetCertInfo"/>
+</wsdl:message>
+<wsdl:message name="GetCertInfoSoapOut">
+<wsdl:part name="parameters" element="tns:GetCertInfoResponse"/>
+</wsdl:message>
+<wsdl:message name="AuthHandler2SoapIn">
+<wsdl:part name="parameters" element="tns:AuthHandler2"/>
+</wsdl:message>
+<wsdl:message name="AuthHandler2SoapOut">
+<wsdl:part name="parameters" element="tns:AuthHandler2Response"/>
+</wsdl:message>
+<wsdl:message name="GetAvailableServicesSoapIn">
+<wsdl:part name="parameters" element="tns:GetAvailableServices"/>
+</wsdl:message>
+<wsdl:message name="GetAvailableServicesSoapOut">
+<wsdl:part name="parameters" element="tns:GetAvailableServicesResponse"/>
+</wsdl:message>
+<wsdl:message name="QueryFunctionListSoapIn">
+<wsdl:part name="parameters" element="tns:QueryFunctionList"/>
+</wsdl:message>
+<wsdl:message name="QueryFunctionListSoapOut">
+<wsdl:part name="parameters" element="tns:QueryFunctionListResponse"/>
+</wsdl:message>
+<wsdl:portType name="AAMediatorSoap">
+<wsdl:operation name="AuthHandler">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得使用者服務之Token2</wsdl:documentation>
+<wsdl:input message="tns:AuthHandlerSoapIn"/>
+<wsdl:output message="tns:AuthHandlerSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="TIAuthHandler">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">TI取得使用者之服務授權資訊</wsdl:documentation>
+<wsdl:input message="tns:TIAuthHandlerSoapIn"/>
+<wsdl:output message="tns:TIAuthHandlerSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="X509Handler">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">憑證資訊驗證</wsdl:documentation>
+<wsdl:input message="tns:X509HandlerSoapIn"/>
+<wsdl:output message="tns:X509HandlerSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="LoginHandler">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">帳號密碼驗證</wsdl:documentation>
+<wsdl:input message="tns:LoginHandlerSoapIn"/>
+<wsdl:output message="tns:LoginHandlerSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="ValidateToken1">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Token1驗證</wsdl:documentation>
+<wsdl:input message="tns:ValidateToken1SoapIn"/>
+<wsdl:output message="tns:ValidateToken1SoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetAuthObjects">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查詢使用者之服務授權物件資訊</wsdl:documentation>
+<wsdl:input message="tns:GetAuthObjectsSoapIn"/>
+<wsdl:output message="tns:GetAuthObjectsSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetServiceAuthList">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查詢服務授權清單</wsdl:documentation>
+<wsdl:input message="tns:GetServiceAuthListSoapIn"/>
+<wsdl:output message="tns:GetServiceAuthListSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="LogoutHandler">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Token1立即廢止</wsdl:documentation>
+<wsdl:input message="tns:LogoutHandlerSoapIn"/>
+<wsdl:output message="tns:LogoutHandlerSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetCertInfo">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得憑證資訊</wsdl:documentation>
+<wsdl:input message="tns:GetCertInfoSoapIn"/>
+<wsdl:output message="tns:GetCertInfoSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="AuthHandler2">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得使用者服務之Token22</wsdl:documentation>
+<wsdl:input message="tns:AuthHandler2SoapIn"/>
+<wsdl:output message="tns:AuthHandler2SoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetAvailableServices">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得有效之服務清單</wsdl:documentation>
+<wsdl:input message="tns:GetAvailableServicesSoapIn"/>
+<wsdl:output message="tns:GetAvailableServicesSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="QueryFunctionList">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查詢功能清單</wsdl:documentation>
+<wsdl:input message="tns:QueryFunctionListSoapIn"/>
+<wsdl:output message="tns:QueryFunctionListSoapOut"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="AAMediatorSoap" type="tns:AAMediatorSoap">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="AuthHandler">
+<soap:operation soapAction="http://tempuri.org/AuthHandler" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="TIAuthHandler">
+<soap:operation soapAction="http://tempuri.org/TIAuthHandler" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="X509Handler">
+<soap:operation soapAction="http://tempuri.org/X509Handler" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="LoginHandler">
+<soap:operation soapAction="http://tempuri.org/LoginHandler" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ValidateToken1">
+<soap:operation soapAction="http://tempuri.org/ValidateToken1" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetAuthObjects">
+<soap:operation soapAction="http://tempuri.org/GetAuthObjects" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetServiceAuthList">
+<soap:operation soapAction="http://tempuri.org/GetServiceAuthList" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="LogoutHandler">
+<soap:operation soapAction="http://tempuri.org/LogoutHandler" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetCertInfo">
+<soap:operation soapAction="http://tempuri.org/GetCertInfo" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="AuthHandler2">
+<soap:operation soapAction="http://tempuri.org/AuthHandler2" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetAvailableServices">
+<soap:operation soapAction="http://tempuri.org/GetAvailableServices" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QueryFunctionList">
+<soap:operation soapAction="http://tempuri.org/QueryFunctionList" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name="AAMediatorSoap12" type="tns:AAMediatorSoap">
+<soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="AuthHandler">
+<soap12:operation soapAction="http://tempuri.org/AuthHandler" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="TIAuthHandler">
+<soap12:operation soapAction="http://tempuri.org/TIAuthHandler" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="X509Handler">
+<soap12:operation soapAction="http://tempuri.org/X509Handler" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="LoginHandler">
+<soap12:operation soapAction="http://tempuri.org/LoginHandler" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ValidateToken1">
+<soap12:operation soapAction="http://tempuri.org/ValidateToken1" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetAuthObjects">
+<soap12:operation soapAction="http://tempuri.org/GetAuthObjects" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetServiceAuthList">
+<soap12:operation soapAction="http://tempuri.org/GetServiceAuthList" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="LogoutHandler">
+<soap12:operation soapAction="http://tempuri.org/LogoutHandler" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetCertInfo">
+<soap12:operation soapAction="http://tempuri.org/GetCertInfo" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="AuthHandler2">
+<soap12:operation soapAction="http://tempuri.org/AuthHandler2" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetAvailableServices">
+<soap12:operation soapAction="http://tempuri.org/GetAvailableServices" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QueryFunctionList">
+<soap12:operation soapAction="http://tempuri.org/QueryFunctionList" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="AAMediator">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">e政府服務平台認證授權模組介接服務</wsdl:documentation>
+<wsdl:port name="AAMediatorSoap" binding="tns:AAMediatorSoap">
+<soap:address location="https://www.cp.gov.tw/SEWebApplication/AAmediator.asmx"/>
+</wsdl:port>
+<wsdl:port name="AAMediatorSoap12" binding="tns:AAMediatorSoap12">
+<soap12:address location="https://www.cp.gov.tw/SEWebApplication/AAmediator.asmx"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>
